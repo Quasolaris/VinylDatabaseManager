@@ -146,4 +146,4 @@ To update your database you can simply update your .csv and then rerun the follo
 ```
 python3 updateDB.py
 ```
-At the moment the whole database gets downloaded again, in a further update will be an overhaul of the update process, to just download the albums that are already present.
+At the moment the whole database gets downloaded again, in a further update will be an overhaul of the update process, to just download the albums that are not already present.
