@@ -1,7 +1,14 @@
 # Vinyl Database Manager
 ## 0.1.5
 
-A simple GUI-Script that fetches tracks and other information of your .csv vinyl database.
+A simple GUI-Script that fetches tracks and other information of your .csv vinyl database through the Discogs API.
+
+You can give the script a .csv file that has artist and album od your collection in columns. The script will then search the album through the Discogs-API and will collect the following information about it:
+- Tracks
+- Duration of the tracks
+- Track position on the record
+
+A new .csv file is then created with that additional information, the GUI-Script can then show the database in an easy to navigate fashion.
 
 ![](images/DBmanager_GUI.png)
 
