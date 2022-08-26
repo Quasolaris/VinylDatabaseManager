@@ -1,8 +1,20 @@
 # VinylDatabaseManager
 ## 0.1.5
+
 A simple GUI-Script that fetches tracks and other information of your .csv vinyl database.
 
-## SetUp
+![](images/DBmanager_GUI.png)
+
+You can read my blog about this project on my [website.](http://quasolaris.tech/posts/vinylCollectionPart1.html)
+
+[Buy Me A Coffe!](https://www.buymeacoffee.com/quasolaris)
+
+## Content Table
+1. Set Up
+2. Insert own database
+3. Update Database
+
+## 1. Set Up
 To be able to run the GUI-Script a few steps need to be done in advance. The guide is for Linux but it should be more or less the same on Windows and OSX.
 
 ### Getting an Access-Token for the Discogs API
@@ -42,7 +54,7 @@ Your system should now be ready to run the script, to test it run the following 
 ```
 python3 updateDB.py
 ```
-If everything is OK then the script will fill the database with test data, taken from the ```/database/template_file.csv``` file. The output should look like this:
+If everything is OK then the script will fill the working database with test data, taken from the ```/database/template_file.csv``` file. The output should look like this:
 
 ```
 YOUR@USER:VinylDatabaseManager/src$ python3 updateDB.py 
@@ -92,3 +104,46 @@ When this script finished successfully, you can run the following command:
 python3 vinyl_tool.py 
 ```
 A window should now open where you can choose the artists on the left, their albums in the middle and get detailed information on the right.
+
+## 2. Insert own Database
+### Your database NEEDS two columns that have the artist and the album present
+Look into the ```/database/template_file.csv``` file to see what information has to be present. There can be more columns with more information, the script ignores them but artist and album need to be present.
+
+##### Make a backup of your database NOW, the script should not write into the original file but better save than sorry
+
+To insert your own database you can do it in two ways:
+### First way (easy)
+Rename your database to ```template_file.csv``` and replace the file inside the ```database/``` folder. The run the update script to fill the GUI-database with your entries:
+
+REMINDER: run this inside the src folder
+```
+python3 updateDB.py
+```
+Depending on your database, you can make yourself a coffee and wait, every few API calls the script will wait for 5 seconds to not get blocked by their DDoS protection. When the script is finished you can run the GUI-Script, again inside the src folder:
+```
+python3 vinyl_tool.py
+```
+You should now be able to browse your database with track information.
+
+### Second way (Harder but better)
+Open the ```/src/updateDB.py``` file and replace the template_file.csv path with the relative path to your database, it should look something like this:
+```
+USER_DATABASE = "../../someFolder/yourNowBackedUpDatabase.csv" # change path to your vinylDB file
+```
+
+REMINDER: run this inside the src folder
+```
+python3 updateDB.py
+```
+Depending on your database, you can make yourself a coffee and wait, every few API calls the script will wait for 5 seconds to not get blocked by their DDoS protection. When the script is finished you can run the GUI-Script, again inside the src folder:
+```
+python3 vinyl_tool.py
+```
+You should now be able to browse your database with track information.
+
+## 3. Update Database
+To update your database you can simply update your .csv and then rerun the following command:
+```
+python3 updateDB.py
+```
+At the moment the whole database gets downloaded again, in a further update will be an overhaul of the update process, to just download the albums that are already present.
