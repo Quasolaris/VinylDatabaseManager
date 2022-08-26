@@ -1,4 +1,4 @@
-# VinylDatabaseManager
+# Vinyl Database Manager
 ## 0.1.5
 
 A simple GUI-Script that fetches tracks and other information of your .csv vinyl database.
