@@ -16,10 +16,12 @@ You can read my blog about this project on my [website.](http://quasolaris.tech/
 
 [Buy Me A Coffe!](https://www.buymeacoffee.com/quasolaris)
 
+
 ## Content Table
 1. Set Up
 2. Insert own database
 3. Update Database
+4. Roadmap 
 
 ## 1. Set Up
 To be able to run the GUI-Script a few steps need to be done in advance. The guide is for Linux but it should be more or less the same on Windows and OSX.
@@ -154,3 +156,8 @@ To update your database you can simply update your .csv and then rerun the follo
 python3 updateDB.py
 ```
 At the moment the whole database gets downloaded again, in a further update will be an overhaul of the update process, to just download the albums that are not already present.
+
+## 4. Roadmap
+- Fetch BPM information save and display per track
+- Add/edit/delete entry into .csv file
+- Add/delete new columns to .csv file
